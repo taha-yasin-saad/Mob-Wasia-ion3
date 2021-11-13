@@ -1,0 +1,84 @@
+<!-- -->
+<ion-content class="auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding text-center>
+      <div class="logo"></div>
+      <!-- <h2 ion-text class="text-primary">
+        <strong>Ionic 3</strong> Start Theme
+      </h2> -->
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" (ngSubmit)="onSubmitRegister(f)" #f="ngForm">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          الأسم بالكامل
+        </ion-label>
+        <ion-input [(ngModel)]="name" name="name" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="ios-call" item-start class="text-primary"></ion-icon>
+          رقم الجوال
+        </ion-label>
+        <ion-input [(ngModel)]="phone" name="phone" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          البريد الالكتروني
+        </ion-label>
+        <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          كلمة المرور
+        </ion-label>
+        <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+      </ion-item>
+    
+
+      <div margin-top>
+        <button ion-button block color="dark" tappable (click)="register()">
+          تسجيل
+        </button>
+
+        <!-- <p text-center ion-text color="secondary">أو سجل دخول ب:</p>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <button ion-button icon-only block class="btn-facebook">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-4>
+              <button ion-button icon-only block class="btn-twitter">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-4>
+              <button ion-button icon-only block class="btn-gplus">
+                <ion-icon name="logo-googleplus"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid> -->
+        
+      </div>
+    </form>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="primary" tappable (click)="login()">لديك حساب بالفعل؟</span>
+    </div>
+
+  </div>
+</ion-content>

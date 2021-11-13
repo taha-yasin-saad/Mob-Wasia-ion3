@@ -1,0 +1,71 @@
+<!-- -->
+<ion-header dir="rtl">
+  <ion-navbar color="primary">
+    <ion-title text-center>
+      <strong>وصية</strong>
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="goToAccount()">
+            <ion-icon name="person"  size="large"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg" >
+    <div *ngIf="will.status == 1 || will.wasya.user.is_die == 1">
+        <ion-card padding>
+        	<ion-card-title>محتوي الوصية</ion-card-title>
+        	<p [innerHtml]="will.wasya.wasya_text"></p>
+        </ion-card>
+        <ion-card padding>
+        	<ion-card-title>ديون مستحقة</ion-card-title>
+        	<p [innerHtml]="will.wasya.debit"></p>
+        </ion-card>
+        <ion-card padding>
+        	<ion-card-title>عبادات فائتة</ion-card-title>
+        	<p [innerHtml]="will.wasya.prayers"></p>
+        </ion-card>
+        <ion-card padding>
+        	<ion-card-title>الشهود</ion-card-title>
+        	<ion-card-content>
+                <div *ngFor="let wit of will.wasya.witness">
+                    <p>{{wit.name}}</p>
+                    <hr>
+                </div>
+        		
+        	</ion-card-content>
+        </ion-card>
+        <ion-card padding>
+        	<ion-card-title>الورثة</ion-card-title>
+        	<ion-card-content>
+        		<div *ngFor="let inh of will.wasya.inheritor">
+                    <p>{{inh.name}}</p>
+                    <hr>
+                </div>
+        	</ion-card-content>
+        </ion-card>
+
+
+        <ion-row *ngIf="will.status == 1">
+            <ion-col>
+              <button ion-button full (click)="captureAudio()">تسجيل الشهادة صوتيا</button>
+            </ion-col>
+        </ion-row>
+
+        <ion-list *ngIf="will.status == 1">
+            <ion-item *ngFor="let file of mediaFiles" tappable (click)="play(file)" text-wrap>
+               {{ file.name }}
+               <p>{{ file.size / 1000 / 1000 | number }} MB</p>
+            </ion-item>
+        </ion-list>
+
+
+        <button ion-button color="primary" full tappable large *ngIf="will.status == 1 && will.wasya.user.is_die == 0" (click)="died()"><ion-icon name="create" padding></ion-icon>تأكيد الوفاة</button>
+        <h3 text-center *ngIf="will.status == 1 && will.wasya.user.is_die == 1">تم تأكيد الوفاة سابقا</h3>
+    </div>
+    <div text-center *ngIf="will.status == 2 && will.wasya.user.is_die == 0">
+        <h3>يجب ان يتم تأكيد وفاة صاحب الوصية اولا حتي يمكنك رؤية محتويات الوصية</h3>
+    </div>
+
+</ion-content>

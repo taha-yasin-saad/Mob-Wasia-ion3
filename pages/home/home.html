@@ -1,0 +1,33 @@
+<!-- -->
+<ion-header dir="rtl">
+  <ion-navbar color="primary">
+    <ion-title text-center>
+      <strong>الرئيسية</strong>
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="goToAccount()">
+            <ion-icon name="person"  size="large"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+    </div>
+
+  <div class="home-btn" (click)="goMyWill()">
+    <a>
+      <h2>وصيتى</h2>
+    </a>
+  </div>
+
+  <div class="home-btn" (click)="WillsPage()">
+    <a>
+      <h2>وصايا اخرى</h2>
+    </a>
+  </div>
+
+</ion-content>

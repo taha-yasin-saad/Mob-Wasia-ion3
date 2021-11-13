@@ -1,0 +1,26 @@
+<!-- -->
+<ion-header dir="rtl">
+  <ion-navbar color="primary">
+    <ion-title text-center>
+      <strong>وصايا أخري</strong>
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="goToAccount()">
+            <ion-icon name="person"  size="large"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+    <ion-card *ngFor="let will of wills ; let ii = index  ; let ll = count" >
+    	<ion-row (click)="WillPage(will)">
+    		<ion-col col-9><p>وصية <strong>{{will.wasya.user.name}}</strong></p></ion-col>
+    		<ion-col col-3 color="primary" *ngIf="will.status == 1">شاهد</ion-col>
+            <ion-col col-3 color="primary" *ngIf="will.status == 2">وريث</ion-col>
+    	</ion-row>
+    </ion-card>
+    
+
+</ion-content>

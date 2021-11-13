@@ -1,0 +1,65 @@
+<ion-header dir="rtl">
+    <ion-navbar color="primary">
+      <ion-title text-center>
+        <strong> إضافة الشهود و الورثة</strong>
+      </ion-title>
+      <ion-buttons end>
+        <button type="button" ion-button (click)="goToAccount()">
+          <ion-icon name="person" size="large"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <div>
+          <h2>الشهود</h2>
+          <ion-card >
+            <ion-item-group margin-top >
+
+              <ion-item>
+                <ion-label stacked>الاسم</ion-label>
+                <ion-input type="text" [(ngModel)]="witness_name"  >
+
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label stacked>رقم الهاتف</ion-label>
+                <ion-input type="number" [(ngModel)]="witness_phone" >
+
+                </ion-input>
+              </ion-item>
+            </ion-item-group>
+          </ion-card>
+
+          <button type="button" ion-button color="primary" full tappable (click)="add_wit()">
+              <ion-icon name="add-circle" padding></ion-icon>اضافة شاهد
+          </button>
+
+
+
+
+          <h2>الورثة</h2>
+          <ion-card>
+              <ion-item-group margin-top>
+
+                <ion-item>
+                  <ion-label stacked>الاسم</ion-label>
+                  <ion-input type="text" [(ngModel)]="inheritor_name">
+
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label stacked>رقم الهاتف</ion-label>
+                  <ion-input type="text" [(ngModel)]="inheritor_phone">
+
+                  </ion-input>
+                </ion-item>
+              </ion-item-group>
+          </ion-card>
+
+          <button type="button" ion-button color="primary" full tappable (click)="add_inherit()">
+              <ion-icon name="add-circle"  padding></ion-icon>اضافة وريث
+          </button>
+      </div>
+</ion-content>

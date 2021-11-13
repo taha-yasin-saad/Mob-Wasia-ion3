@@ -1,0 +1,24 @@
+<!-- -->
+<ion-header dir="rtl">
+  <ion-navbar color="primary">
+    <ion-title text-center>
+      <strong>عن التطبيق</strong>
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="goToAccount()">
+            <ion-icon name="person"  size="large"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+    </div>
+    <div text-center>
+    	<p text-center [innerHtml]="about"></p>
+    </div>
+
+</ion-content>

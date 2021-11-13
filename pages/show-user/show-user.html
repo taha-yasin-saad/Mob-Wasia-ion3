@@ -1,0 +1,55 @@
+<ion-header dir="rtl">
+    <ion-navbar color="primary">
+      <ion-title text-center>
+        <strong>الشهود و الورثة</strong>
+      </ion-title>
+      <ion-buttons end>
+        <button type="button" ion-button (click)="goToAccount()">
+          <ion-icon name="person" size="large"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <div class="form-title" padding margin-vertical *ngIf="witness.length < 2" >
+        <h3 text-center color="primary">يجب تسجيل اثنين من اشهود على الاقل</h3>
+      </div>
+
+      <ion-list margin-vertical>
+        <ion-list-header>الشهود</ion-list-header>
+        <ion-item *ngFor="let witnes of witness ; let ii = index  ; let ll = count">
+          <h2>{{witnes.name}}</h2>
+          <p>{{witnes.phone}}</p>
+          <button ion-button color="danger" item-end (click)="delete_user(witnes.id)" >
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item>
+
+      </ion-list>
+
+      <div margin-top>
+        <button ion-button block round color="dark" tappable large (click)="go_adduser()">
+          إضافة شاهد
+        </button>
+      </div>
+
+      <ion-list margin-vertical>
+          <ion-list-header>الورثة</ion-list-header>
+          <ion-item *ngFor="let inherit of inheritor ; let ii = index  ; let ll = count">
+            <h2>{{inherit.name}}</h2>
+            <p>{{inherit.phone}}</p>
+            <button ion-button color="danger" item-end (click)="delete_user(inherit.id)" >
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-item>
+
+        </ion-list>
+
+        <div margin-top>
+          <button ion-button block round color="dark" tappable large (click)="go_adduser()">
+            إضافة وريث
+          </button>
+        </div>
+
+</ion-content>

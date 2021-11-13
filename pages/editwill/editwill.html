@@ -1,0 +1,102 @@
+<ion-header dir="rtl">
+  <ion-navbar color="primary">
+    <ion-title text-center>
+      <strong>بيانات الوصية</strong>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="goToAccount()">
+        <ion-icon name="person" size="large"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <!-- <div padding-horizontal text-center class="animated fadeInDown">
+        <div class="logo"></div>
+      </div> -->
+  <ion-grid class="phases">
+    <ion-row>
+      <ion-col col-4>
+        <ion-card [class.active]="step == 1" (click)="goStep1()">
+          <ion-card-content>1</ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card [class.active]="step == 2" (click)="goStep2()">
+          <ion-card-content>2</ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card [class.active]="step == 3" (click)="goStep3()">
+          <ion-card-content>3</ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="step == 1">
+    <ion-card class="phase_title">نص الوصية</ion-card>
+    <ion-item margin-vertical>
+      <ion-label>محتوى الوصية</ion-label>
+      <ion-textarea [(ngModel)]="wasya_text" rows="7"></ion-textarea>
+    </ion-item>
+    <button type="button" ion-button (click)="goStep2()" class="next">
+        التالى
+      </button>
+  </div>
+
+  <div *ngIf="step == 2" >
+    <ion-card class="phase_title"> الديون المستحقة</ion-card>
+    <ion-item margin-vertical>
+      <ion-label>الديون المستحقة</ion-label>
+      <ion-textarea [(ngModel)]="debit" rows="7"></ion-textarea>
+    </ion-item>
+    <button type="button" ion-button (click)="goStep3()"  class="next">
+        التالى
+      </button>
+      <button type="button" ion-button (click)="goStep1()" >
+          السابق
+        </button>
+  </div>
+
+  <div *ngIf="step == 3">
+    <ion-card class="phase_title">العبادات الفائته</ion-card>
+    <ion-item margin-vertical>
+      <ion-label>العبادات الفائتة</ion-label>
+      <ion-textarea [(ngModel)]="prayers" rows="6"></ion-textarea>
+    </ion-item>
+    <button type="button" ion-button (click)="goStep2()" >
+        السابق
+      </button>
+    <button ion-button full (click)="update_wasya()">
+        تعديل
+        <ion-icon name="create" padding  ></ion-icon>
+      </button>
+  </div>
+
+
+
+  <!-- <form (ngSubmit)="update_wasya(f)" #f="ngForm">
+    <ion-item margin-vertical>
+      <ion-label>محتوى الوصية</ion-label>
+      <ion-textarea [(ngModel)]="wasya_text" name="wasya_text" rows="4"></ion-textarea>
+    </ion-item>
+
+    <ion-item margin-vertical>
+      <ion-label>الديون المستحقة</ion-label>
+      <ion-textarea [(ngModel)]="debit" name="debit" rows="2"></ion-textarea>
+    </ion-item>
+
+    <ion-item margin-vertical>
+      <ion-label>العبادات الفائتة</ion-label>
+      <ion-textarea [(ngModel)]="prayers" name="prayers" rows="2"></ion-textarea>
+    </ion-item>
+
+    <button ion-button full>
+      تعديل
+      <ion-icon name="create" padding></ion-icon>
+    </button>
+  </form> -->
+
+</ion-content>

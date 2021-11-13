@@ -1,0 +1,69 @@
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <!-- <h2 ion-text class="text-primary">
+        <strong>Ionic 3</strong> Start Theme
+      </h2> -->
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" (ngSubmit)="onSubmitActive(f)" #f="ngForm">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="ios-call" item-start class="text-primary"></ion-icon>
+          رقم الجوال
+        </ion-label>
+        <ion-input type="number" name="phone" [(ngModel)]="phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          كود التفعيل
+        </ion-label>
+        <ion-input type="number" name="active_code" [(ngModel)]="active_code" ></ion-input>
+      </ion-item>
+    
+
+      <div>
+        <button ion-button icon-start block color="dark" tappable>
+          <ion-icon name="log-in"></ion-icon>
+          تأكيد
+        </button>
+
+        <!-- <p text-center ion-text color="secondary">أو سجل دخول ب:</p>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <button ion-button icon-only block class="btn-facebook">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-4>
+              <button ion-button icon-only block class="btn-twitter">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-4>
+              <button ion-button icon-only block class="btn-gplus">
+                <ion-icon name="logo-googleplus"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid> -->
+
+      </div>
+    </form>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="login()"><strong>تسجيل الدخول</strong></span>
+    </div>
+
+  </div>
+</ion-content>

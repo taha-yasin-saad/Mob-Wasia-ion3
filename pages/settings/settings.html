@@ -1,0 +1,58 @@
+<!-- -->
+<ion-header dir="rtl">
+    <ion-navbar color="primary">
+      <ion-title text-center>
+        <strong>الملف الشخصى</strong>
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="logout()">
+          <ion-icon name="log-out"  size="large"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content class="common-bg">
+  <!-- User settings-->
+  <!-- <ion-avatar>
+    <img src="assets/img/profile.jpg">
+  </ion-avatar> -->
+  <form (ngSubmit)="onSubmitedit(f)" #f="ngForm">
+    <ion-item-group>
+      <ion-item-divider color="secondary" class="bold" text-center>المعلومات الشخصية </ion-item-divider>
+      <ion-item>
+        <ion-label stacked >الاسم</ion-label>
+        <ion-input type="text" [(ngModel)]="name" name="name" value="{{name}}">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>البريد الالكترونى</ion-label>
+          <ion-input type="text" [(ngModel)]="email" name="email" value="{{email}}">
+            
+          </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label  stacked>رقم الهاتف</ion-label>
+            <ion-input type="text" [(ngModel)]="phone" name="phone" value="{{phone}}">
+              
+            </ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label stacked >العنوان</ion-label>
+              <ion-input type="text" [(ngModel)]="address" name="address" value="{{address}}">
+                
+              </ion-input>
+            </ion-item>
+          <ion-item>
+              <ion-label stacked >كلمة مرور جديدة</ion-label>
+              <ion-input type="password" [(ngModel)]="password" name="password">
+                
+              </ion-input>
+            </ion-item>
+    </ion-item-group>
+
+    <!--sign out button-->
+    <button ion-button color="primary" full tappable large>
+        <ion-icon name="create" padding></ion-icon>تعديل البيانات</button>
+  </form>
+</ion-content>
